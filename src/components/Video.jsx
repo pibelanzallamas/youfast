@@ -36,6 +36,7 @@ function Video(props) {
       <div className="video top">
         {result.id ? (
           <iframe
+            className="iframe"
             width="600"
             height="315"
             src={`https://www.youtube.com/embed/${result.id.videoId}?autoplay=1`}

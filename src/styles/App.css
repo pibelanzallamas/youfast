@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+h1 {
+  font-size: 2rem;
+}
+
+.buscador input {
+  border: 2px solid #0066ff;
+  border-radius: 40px;
+  color: #0066ff;
+  font-size: 20px;
+  padding: 4px 16px;
+}
+
+.titulo {
+  font-size: 1.3rem;
+}
+
+.botones {
+  width: 400px;
+  display: flex;
+  align-content: space-around;
+  justify-content: space-around;
+}
+.botones button {
+  padding: 0.7rem;
+  font-size: 1rem;
+  border: 2px solid #0066ff;
+  border-radius: 40px;
+  background-color: inherit;
+  color: #0066ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Roboto;
+  color: #0066ff;
+}
+
+.top {
+  margin-top: 1rem;
+}
+
+::placerholder {
+  color: #0066ff;
+}
+
+/*# sourceMappingURL=App.css.map */

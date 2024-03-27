@@ -5,7 +5,7 @@ import YTSearch from "youtube-api-search";
 function Home(props) {
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
-  const youtubeAPI = "AIzaSyBc1gOs6jl0DqPeovrcIJXdAHQuJRKsxp4";
+  const youtubeAPI = import.meta.env.VITE_API_KEY;
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -23,7 +23,6 @@ function Home(props) {
   return (
     <div className="home">
       <h1 className="top">YourElder</h1>
-
       <form onSubmit={handleSearch}>
         <div className="buscador top">
           <input

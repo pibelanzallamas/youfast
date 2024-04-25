@@ -37,7 +37,7 @@ function Home(props) {
       </form>
       <p className="epigrafe">
         Buscador de canciones destinado para que nuestros abuelos y abuelas
-        puedan buscar sus canciones favoritas. Suerte Abue!
+        puedan buscar sus canciones favoritas. <section>Suerte Abue!</section>
       </p>
       <div className="space-fill"></div>
       <footer>

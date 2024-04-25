@@ -59,7 +59,6 @@ h1 {
   font-family: Roboto;
   color: #0066ff;
   min-height: 100vh;
-  border: 1px solid red;
 }
 
 .top {
@@ -68,8 +67,7 @@ h1 {
 
 ::placeholder {
   text-align: center;
-  color: #0066ff;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 /*# sourceMappingURL=App.css.map */

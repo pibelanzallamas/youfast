@@ -22,7 +22,7 @@ function Home(props) {
 
   return (
     <div className="home">
-      <h1 className="top">YourElder</h1>
+      <h1 className="top">Abuelitos</h1>
       <form onSubmit={handleSearch}>
         <div className="buscador top">
           <input

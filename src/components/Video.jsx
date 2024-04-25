@@ -29,7 +29,9 @@ function Video(props) {
             <h4>Resultados con: "{props.search}"</h4>
           </div>
         ) : (
-          <h3> No hay video</h3>
+          <div className="titulo">
+            <h3> No hay video</h3>
+          </div>
         )}
       </div>
       {/* VIDEO------------------------- */}

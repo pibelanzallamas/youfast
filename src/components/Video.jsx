@@ -9,7 +9,7 @@ function Video(props) {
   useEffect(() => {
     setResult(props.results[contador] || {});
   }, [contador]);
-
+  console.log(contador);
   return (
     <div className="home">
       {/* BOTON ATRAS-------------------- */}
@@ -36,7 +36,7 @@ function Video(props) {
       </div>
       {/* VIDEO------------------------- */}
       <div className="video top">
-        {result.id ? (
+        {result.id && (
           <iframe
             className="iframe"
             width="600"
@@ -46,21 +46,15 @@ function Video(props) {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-        ) : (
-          <></>
         )}
       </div>
       {/* BOTONES----------------------- */}
       {result.id ? (
         <div className="botones top">
-          {contador == 0 ? (
-            <></>
-          ) : (
+          {contador != 0 && (
             <button onClick={() => setContador(contador - 1)}>Anterior</button>
           )}
-          {contador > 3 ? (
-            <></>
-          ) : (
+          {contador < 19 && (
             <button onClick={() => setContador(contador + 1)}>Siguiente</button>
           )}
         </div>

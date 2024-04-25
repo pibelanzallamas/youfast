@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import YTSearch from "youtube-api-search";
+import axios from "axios";
 
 function Home(props) {
   const [search, setSearch] = useState("");
@@ -10,14 +11,17 @@ function Home(props) {
   const handleSearch = (e) => {
     e.preventDefault();
     props.search(search);
-    try {
-      YTSearch({ key: youtubeAPI, term: search }, (videos) => {
+
+    axios
+      .get(
+        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${search}&key=${youtubeAPI}`
+      )
+      .then((feedback) => {
+        const videos = feedback.data.items;
         props.results(videos);
         navigate("/video");
-      });
-    } catch (err) {
-      console.error(err);
-    }
+      })
+      .catch((err) => console.error(err));
   };
 
   return (

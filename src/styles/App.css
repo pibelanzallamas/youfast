@@ -9,6 +9,16 @@ h1 {
   color: #0066ff;
   font-size: 20px;
   padding: 4px 16px;
+  text-align: center;
+}
+
+.epigrafe {
+  text-align: center;
+  padding: 1rem;
+}
+
+.space-fill {
+  flex-grow: 1;
 }
 
 .titulo {
@@ -48,14 +58,18 @@ h1 {
   align-items: center;
   font-family: Roboto;
   color: #0066ff;
+  min-height: 100vh;
+  border: 1px solid red;
 }
 
 .top {
   margin-top: 1rem;
 }
 
-::placerholder {
+::placeholder {
+  text-align: center;
   color: #0066ff;
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=App.css.map */

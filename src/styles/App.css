@@ -13,7 +13,6 @@ h1 {
 }
 
 .epigrafe {
-  text-align: center;
   padding: 1rem;
 }
 
@@ -23,7 +22,6 @@ h1 {
 
 .titulo {
   font-size: 1.3rem;
-  text-align: center;
 }
 
 .botones {
@@ -60,6 +58,7 @@ h1 {
   font-family: Roboto;
   color: #0066ff;
   min-height: 100vh;
+  text-align: center;
 }
 
 .top {
@@ -67,7 +66,6 @@ h1 {
 }
 
 ::placeholder {
-  text-align: center;
   font-size: 18px;
 }
 

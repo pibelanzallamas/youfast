@@ -67,6 +67,10 @@ function Video(props) {
       ) : (
         <></>
       )}
+      <div className="space-fill"></div>
+      <footer>
+        <p>Creado por Brandon Castillo ⚔️🏰</p>
+      </footer>
     </div>
   );
 }

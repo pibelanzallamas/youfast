@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap");
+@font-face {
+  font-family: creamy;
+  src: url("./creamy.ttf");
+}
+@font-face {
+  font-family: americas;
+  src: url("./americas.otf");
+}
 h1 {
   font-size: 2rem;
 }
@@ -11,6 +21,7 @@ h1 {
   padding: 4px 16px;
   text-align: center;
   background-color: inherit;
+  font-family: Montserrat;
 }
 
 .epigrafe {
@@ -56,7 +67,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: Roboto;
+  font-family: Montserrat;
   color: #0066ff;
   min-height: 100vh;
   text-align: center;
@@ -70,6 +81,7 @@ h1 {
 ::placeholder {
   font-size: 18px;
   color: #0066ff;
+  font-family: Montserrat;
 }
 
 /*# sourceMappingURL=App.css.map */

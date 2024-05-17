@@ -39,10 +39,18 @@ function Home(props) {
           ></input>
         </div>
       </form>
-      <p className="epigrafe">
+      {/* <p className="epigrafe">
         Buscador de canciones destinado para que nuestros abuelos y abuelas
         puedan buscar sus canciones favoritas. <section>Suerte Abue!</section>
-      </p>
+      </p> */}
+      <div className="instrucciones top">
+        <p>
+          <u>Instrucciones</u>
+        </p>
+        <p>1. Escriba la canción en el buscador</p>
+        <p>2. Presione ENTER</p>
+        <p>3. Presione siguiente si no es la que estaba buscando</p>
+      </div>
       <div className="space-fill"></div>
       <footer>
         <p>Creado por Brandon Castillo ⚔️🏰</p>

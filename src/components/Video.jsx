@@ -19,7 +19,7 @@ function Video(props) {
             navigate("/");
           }}
         >
-          Buscar otra canción
+          ↖️ Buscar otra canción
         </button>
       </div>
       {/* TITULO------------------------- */}
@@ -52,10 +52,14 @@ function Video(props) {
       {result.id ? (
         <div className="botones top">
           {contador != 0 && (
-            <button onClick={() => setContador(contador - 1)}>Anterior</button>
+            <button onClick={() => setContador(contador - 1)}>
+              ⏮ Anterior
+            </button>
           )}
           {contador < 19 && (
-            <button onClick={() => setContador(contador + 1)}>Siguiente</button>
+            <button onClick={() => setContador(contador + 1)}>
+              Siguiente ⏭
+            </button>
           )}
         </div>
       ) : (

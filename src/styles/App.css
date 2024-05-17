@@ -10,6 +10,7 @@ h1 {
   font-size: 20px;
   padding: 4px 16px;
   text-align: center;
+  background-color: inherit;
 }
 
 .epigrafe {
@@ -59,6 +60,7 @@ h1 {
   color: #0066ff;
   min-height: 100vh;
   text-align: center;
+  background-image: linear-gradient(to bottom, #b3e0ff, #fde7e7);
 }
 
 .top {
@@ -67,6 +69,7 @@ h1 {
 
 ::placeholder {
   font-size: 18px;
+  color: #0066ff;
 }
 
 /*# sourceMappingURL=App.css.map */

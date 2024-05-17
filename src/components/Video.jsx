@@ -9,7 +9,7 @@ function Video(props) {
   useEffect(() => {
     setResult(props.results[contador] || {});
   }, [contador]);
-  console.log(contador);
+
   return (
     <div className="home">
       {/* BOTON ATRAS-------------------- */}

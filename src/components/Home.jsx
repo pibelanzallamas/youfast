@@ -46,9 +46,7 @@ function Home(props) {
         <p>
           <u>Instrucciones</u>
         </p>
-        <p>1. Escriba la canción en el buscador 
-<br/>
-(si puede agregue el artista)</p>
+        <p>1. Escriba la canción en el buscador (si puede agregue el artista)</p>
         <p>2. Presione ENTER</p>
         <p>3. Presione siguiente si no es la que estaba buscando</p>
       </div>

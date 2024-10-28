@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import YTSearch from "youtube-api-search";
-import axios from "axios";
 
 function Home(props) {
   const [search, setSearch] = useState("");

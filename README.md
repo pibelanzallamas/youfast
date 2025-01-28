@@ -1,9 +1,19 @@
-#YourElder
+Abuelitos
 
-Hola, este es un buscador de Youtube más sencillo
+![image](https://res.cloudinary.com/daynclfo8/image/upload/v1732665477/elder.png)
 
-Reproduce automáticamente los primeros resultados
+[Demo](https://www.youtube.com/watch?v=VXR-ek3Ez50)
 
-Saludos
+_**Español**_
 
-👋
+Entrar al sitio web, ingresar canción a buscar y presione "Siguiente" hasta que encuentre la suya.
+
+Muchas gracias.
+
+_**English**_
+
+Enter the website, type your song, and press 'Siguiente' until you find the right one.
+
+Thank you.
+
+Brandon

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Home(props) {
   const [search, setSearch] = useState("");
@@ -45,7 +46,9 @@ function Home(props) {
         <p>
           <u>Instrucciones</u>
         </p>
-        <p>1. Escriba la canción en el buscador</p>
+        <p>
+          1. Escriba la canción en el buscador (si puede agregue el artista)
+        </p>
         <p>2. Presione ENTER</p>
         <p>3. Presione siguiente si no es la que estaba buscando</p>
       </div>

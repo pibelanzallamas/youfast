@@ -44,7 +44,18 @@ function Home() {
 
   return (
     <div className="home">
-      <h1 className="top">Abuelitos</h1>
+      <h1
+        className="top"
+        onClick={() => {
+          setSearch("");
+          setReady(false);
+          setResult(null);
+          setVideos([]);
+        }}
+        style={{ cursor: "pointer" }}
+      >
+        YourElder
+      </h1>
       <form onSubmit={handleSearch}>
         <div className="buscador top">
           <input
@@ -57,7 +68,7 @@ function Home() {
           ></input>
         </div>
       </form>
-      <div className="instrucciones top">
+      <div className="instrucciones top" style={{ flex: "1" }}>
         <p>
           <u>Instrucciones</u>
         </p>
@@ -65,14 +76,14 @@ function Home() {
           1. Escriba la canción en el buscador (si puede agregue el artista)
         </p>
         <p>2. Presione ENTER</p>
-        <p>3. Presione siguiente si no es la que estaba buscando</p>
+        <p>3. Presione siguiénte si no es la que busca</p>
       </div>
 
       {ready && result && (
-        <div className="video top">
-          <h3>{result.snippet.title}</h3>
+        <div className="video top" style={{ zIndex: "2" }}>
+          <h3 style={{ fontSize: "1.4rem" }}>{result.snippet.title}</h3>
           <iframe
-            className="iframe"
+            className="iframe top"
             width="600"
             height="315"
             src={`https://www.youtube.com/embed/${result.id.videoId}?autoplay=1`}
@@ -95,7 +106,7 @@ function Home() {
         </div>
       )}
 
-      <footer>
+      <footer className="top" style={{ fontSize: "1.1rem" }}>
         <p>Creado por Brandon Castillo ⚔️🏰</p>
       </footer>
     </div>

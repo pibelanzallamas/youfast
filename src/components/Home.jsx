@@ -1,26 +1,45 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-function Home(props) {
-  const [search, setSearch] = useState("");
-  const navigate = useNavigate();
-  const youtubeAPI = import.meta.env.VITE_API_KEY;
+function Home() {
+  const youtubeAPI = import.meta.env.VITE_API_KEY; //youtube api key
+  const [search, setSearch] = useState(""); //prompt
+  const [videos, setVideos] = useState([]); //videos encontrados
+  const [result, setResult] = useState(null); //video seleccionado
+  const [contador, setContador] = useState(0); //numero de video
+  const [ready, setReady] = useState(false);
 
-  const handleSearch = (e) => {
+  useEffect(() => {
+    if (videos.length > 0) {
+      setResult(videos[contador]);
+    }
+  }, [contador, videos]);
+
+  useEffect(() => {
+    if (result && result.snippet) {
+      setReady(true);
+    } else {
+      setReady(false);
+    }
+  }, [result]);
+
+  const handleSearch = async (e) => {
     e.preventDefault();
-    props.search(search);
-
-    axios
-      .get(
+    try {
+      const feedback = await axios.get(
         `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${search}&key=${youtubeAPI}`
-      )
-      .then((feedback) => {
-        const videos = feedback.data.items;
-        props.results(videos);
-        navigate("/video");
-      })
-      .catch((err) => console.error(err));
+      );
+      const items = feedback.data.items || [];
+      setVideos(items);
+      setContador(0);
+      if (items.length > 0) {
+        setResult(items[0]);
+      } else {
+        setResult(null);
+      }
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
@@ -38,10 +57,6 @@ function Home(props) {
           ></input>
         </div>
       </form>
-      {/* <p className="epigrafe">
-        Buscador de canciones destinado para que nuestros abuelos y abuelas
-        puedan buscar sus canciones favoritas. <section>Suerte Abue!</section>
-      </p> */}
       <div className="instrucciones top">
         <p>
           <u>Instrucciones</u>
@@ -52,7 +67,34 @@ function Home(props) {
         <p>2. Presione ENTER</p>
         <p>3. Presione siguiente si no es la que estaba buscando</p>
       </div>
-      <div className="space-fill"></div>
+
+      {ready && result && (
+        <div className="video top">
+          <h3>{result.snippet.title}</h3>
+          <iframe
+            className="iframe"
+            width="600"
+            height="315"
+            src={`https://www.youtube.com/embed/${result.id.videoId}?autoplay=1`}
+            title={result.snippet.title}
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+          <div className="botones top">
+            {contador != 0 && (
+              <button onClick={() => setContador(contador - 1)}>
+                ⏮ Anterior
+              </button>
+            )}
+            {contador < 19 && (
+              <button onClick={() => setContador(contador + 1)}>
+                Siguiente ⏭
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+
       <footer>
         <p>Creado por Brandon Castillo ⚔️🏰</p>
       </footer>

@@ -32,9 +32,11 @@ h1 {
 }
 
 .botones {
-  width: 400px;
+  width: 100%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  border: 1px solid red;
 }
 .botones button {
   padding: 0.7rem;

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 
 function Home() {
   const youtubeAPI = import.meta.env.VITE_API_KEY; //youtube api key
+  const inputRef = useRef(null);
   const [search, setSearch] = useState(""); //prompt
   const [videos, setVideos] = useState([]); //videos encontrados
   const [result, setResult] = useState(null); //video seleccionado
@@ -22,6 +23,21 @@ function Home() {
       setReady(false);
     }
   }, [result]);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "/") {
+        event.preventDefault();
+        inputRef.current?.focus();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -65,6 +81,7 @@ function Home() {
             maxLength={60}
             placeholder="Escriba su canción"
             autoFocus
+            ref={inputRef}
           ></input>
         </div>
       </form>

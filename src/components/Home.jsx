@@ -80,8 +80,8 @@ function Home() {
       </div>
 
       {ready && result && (
-        <div className="video top" style={{ zIndex: "2" }}>
-          <h3 style={{ fontSize: "1.4rem" }}>{result.snippet.title}</h3>
+        <div className="video top">
+          <h3 style={{ fontSize: "1.4rem" }}>▶️ {result.snippet.title}</h3>
           <iframe
             className="iframe top"
             width="600"

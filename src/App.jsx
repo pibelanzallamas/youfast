@@ -1,8 +1,6 @@
 import { useState } from "react";
 import "./styles/App.css";
-import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
-import Video from "./components/Video";
 import { Analytics } from "@vercel/analytics/react";
 
 function App() {
@@ -17,16 +15,7 @@ function App() {
   return (
     <>
       <Analytics />
-      <Routes>
-        <Route
-          path={"/"}
-          element={<Home search={handleData} results={handleResults} />}
-        />
-        <Route
-          path={"/video"}
-          element={<Video search={search} results={results} />}
-        />
-      </Routes>
+      <Home search={handleData} results={handleResults} />
     </>
   );
 }

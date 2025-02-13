@@ -13,6 +13,10 @@ h1 {
   background-color: inherit;
   font-family: Montserrat;
 }
+.buscador input:focus {
+  background-color: rgba(173, 206, 255, 0.5882352941);
+  color: white;
+}
 
 .epigrafe {
   padding: 1rem;
@@ -46,7 +50,7 @@ h1 {
   color: #0066ff;
   cursor: pointer;
 }
-.botones button:hover {
+.botones button:hover, .botones button:focus {
   background-color: #0066ff;
   color: white;
 }

@@ -82,10 +82,8 @@ body {
   margin-top: 1rem;
 }
 
-::placeholder {
-  font-size: 21px;
-  color: #0066ff;
-  font-family: Montserrat;
+.buscador input::placeholder {
+  font-style: italic;
 }
 
 /*# sourceMappingURL=App.css.map */

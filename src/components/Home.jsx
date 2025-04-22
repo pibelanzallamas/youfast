@@ -87,13 +87,13 @@ function Home() {
       </form>
       <div className="instrucciones top" style={{ flex: "1" }}>
         <p>
-          <u>Instrucciones</u>
+          <u>Instructions</u>
         </p>
         <p>
-          1. Escriba la canción en el buscador (si puede agregue el artista)
+          1. Type the song in the search bar (if possible, include the artist)
         </p>
-        <p>2. Presione ENTER</p>
-        <p>3. Presione siguiénte si no es la que busca</p>
+        <p>2. Press ENTER</p>
+        <p>3. Press next if it's not the one you're looking for</p>
       </div>
 
       {ready && result && (
@@ -111,20 +111,18 @@ function Home() {
           <div className="botones top">
             {contador != 0 && (
               <button onClick={() => setContador(contador - 1)}>
-                ⏮ Anterior
+                ⏮ Previous
               </button>
             )}
             {contador < 19 && (
-              <button onClick={() => setContador(contador + 1)}>
-                Siguiente ⏭
-              </button>
+              <button onClick={() => setContador(contador + 1)}>Next ⏭</button>
             )}
           </div>
         </div>
       )}
 
       <footer className="top" style={{ fontSize: "1.1rem" }}>
-        <p>Creado por Brandon Castillo ⚔️🏰</p>
+        <p>Developed by Brandon Castillo ⚔️🏰</p>
       </footer>
     </div>
   );

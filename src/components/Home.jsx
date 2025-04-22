@@ -79,7 +79,7 @@ function Home() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             maxLength={60}
-            placeholder="Escriba su canción"
+            placeholder="Type here"
             autoFocus
             ref={inputRef}
           ></input>

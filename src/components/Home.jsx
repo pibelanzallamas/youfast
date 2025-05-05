@@ -158,7 +158,7 @@ function Home() {
       <div style={{ flex: "1" }}></div>
 
       <footer className="top" style={{ fontSize: "1.1rem" }}>
-        <p>Developed by pibelanzallamas 🔥</p>
+        <p>Developed by Brandon Castillo 🔥</p>
       </footer>
     </div>
   );

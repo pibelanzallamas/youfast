@@ -103,7 +103,7 @@ function Home() {
             <p className="title">
               <u>Instrucciones</u>
             </p>
-            <p>1. Escribí la canción + el artista en la barra de búsqueda.</p>
+            <p>1. Escribí la canción más el artista en la barra de búsqueda.</p>
             <p>2. Apretá ENTER.</p>
             <p>3. Si no es la que buscas, dale a Siguiente ⏭.</p>
           </div>

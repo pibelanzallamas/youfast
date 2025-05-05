@@ -81,7 +81,7 @@ function Home() {
         }}
         style={{ cursor: "pointer" }}
       >
-        YourElder
+        YouFast
       </h1>
 
       {access ? (
@@ -93,7 +93,7 @@ function Home() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 maxLength={60}
-                placeholder="Type song here!"
+                placeholder="Escribir canción"
                 autoFocus
                 ref={inputRef}
               ></input>
@@ -101,14 +101,14 @@ function Home() {
           </form>
           <div className="instrucciones top">
             <p className="title">
-              <u>Instructions</u>
+              <u>Instrucciones</u>
             </p>
             <p>
-              1. Type the song in the search bar (if possible, include the
-              artist).
+              1. Escribí la canción en la barra de búsqueda (si podés, incluí el
+              artista).
             </p>
-            <p>2. Press ENTER.</p>
-            <p>3. Press next if it's not the one you're looking for.</p>
+            <p>2. Apretá ENTER.</p>
+            <p>3. Si no es la que buscabas, dale a Siguiente ⏭.</p>
           </div>
 
           {ready && result && (
@@ -126,12 +126,13 @@ function Home() {
               <div className="botones top">
                 {contador != 0 && (
                   <button onClick={() => setContador(contador - 1)}>
-                    ⏮ Previous
+                    {/* ⏮ Previous */}⏮ Anterior
                   </button>
                 )}
                 {contador < 19 && (
                   <button onClick={() => setContador(contador + 1)}>
-                    Next ⏭
+                    {/* Next ⏭ */}
+                    Siguiente ⏭
                   </button>
                 )}
               </div>
@@ -158,7 +159,7 @@ function Home() {
       <div style={{ flex: "1" }}></div>
 
       <footer className="top" style={{ fontSize: "1.1rem" }}>
-        <p>Developed by Brandon Castillo 🔥</p>
+        <p>Hecho por Brandon Castillo 🔥</p>
       </footer>
     </div>
   );

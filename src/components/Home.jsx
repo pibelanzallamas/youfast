@@ -85,7 +85,7 @@ function Home() {
           ></input>
         </div>
       </form>
-      <div className="instrucciones top" style={{ flex: "1" }}>
+      <div className="instrucciones top">
         <p className="title">
           <u>Instructions</u>
         </p>
@@ -120,6 +120,8 @@ function Home() {
           </div>
         </div>
       )}
+
+      <div style={{ flex: "1" }}></div>
 
       <footer className="top" style={{ fontSize: "1.1rem" }}>
         <p>Developed by pibelanzallamas 🔥</p>

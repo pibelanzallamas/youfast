@@ -17,6 +17,12 @@ h1 {
   outline: 2px solid #ff7045;
 }
 
+.title-clave {
+  margin-top: 0.4rem;
+  font-size: 1.3rem;
+  margin-bottom: -0.5rem;
+}
+
 .epigrafe {
   padding: 1rem;
   font-size: 1.1rem;

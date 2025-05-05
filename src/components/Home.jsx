@@ -103,12 +103,9 @@ function Home() {
             <p className="title">
               <u>Instrucciones</u>
             </p>
-            <p>
-              1. Escribí la canción en la barra de búsqueda (si podés, incluí el
-              artista).
-            </p>
+            <p>1. Escribí la canción + el artista en la barra de búsqueda.</p>
             <p>2. Apretá ENTER.</p>
-            <p>3. Si no es la que buscabas, dale a Siguiente ⏭.</p>
+            <p>3. Si no es la que buscas, dale a Siguiente ⏭.</p>
           </div>
 
           {ready && result && (
@@ -141,6 +138,9 @@ function Home() {
         </>
       ) : (
         <>
+          {/* <div className="instrucciones top"> */}
+          <p className="title-clave">Ingrese código: </p>
+          {/* </div> */}
           <form onSubmit={handleCode}>
             <div className="buscador top">
               <input
@@ -148,7 +148,7 @@ function Home() {
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
                 maxLength={30}
-                placeholder="Ingrese clave"
+                placeholder="********"
                 autoFocus
                 ref={inputRef}
               ></input>

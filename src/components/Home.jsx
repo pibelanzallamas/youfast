@@ -13,7 +13,11 @@ function Home() {
   const [ready, setReady] = useState(false);
   const [access, setAccess] = useState(false); //llave de entrada
   const [code, setCode] = useState("");
-  let player;
+  const player = new YT.Player("youtube-video", {
+    events: {
+      onReady: onPlayerReady,
+    },
+  });
 
   useEffect(() => {
     if (videos.length > 0) {
@@ -44,32 +48,21 @@ function Home() {
         event.preventDefault();
         backRef.current?.click();
       }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === " ") {
-        // Barra espaciadora para play/pause
+      if (event.key === " ") {
         e.preventDefault();
         player.getPlayerState() === YT.PlayerState.PLAYING
           ? player.pauseVideo()
           : player.playVideo();
       }
-      if (e.key === "ArrowRight") {
-        // Avanzar 5 segundos
+      if (event.key === "ArrowRight") {
         player.seekTo(player.getCurrentTime() + 5);
       }
-      if (e.key === "ArrowLeft") {
-        // Retroceder 5 segundos
+      if (event.key === "ArrowLeft") {
         player.seekTo(player.getCurrentTime() - 5);
       }
-    });
+    };
 
-    player = new YT.Player("youtube-video", {
-      events: {
-        onReady: onPlayerReady,
-      },
-    });
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);

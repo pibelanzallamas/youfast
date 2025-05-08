@@ -13,11 +13,6 @@ function Home() {
   const [ready, setReady] = useState(false);
   const [access, setAccess] = useState(false); //llave de entrada
   const [code, setCode] = useState("");
-  const player = new YT.Player("youtube-video", {
-    events: {
-      onReady: onPlayerReady,
-    },
-  });
 
   useEffect(() => {
     if (videos.length > 0) {
@@ -48,20 +43,7 @@ function Home() {
         event.preventDefault();
         backRef.current?.click();
       }
-      if (event.key === " ") {
-        e.preventDefault();
-        player.getPlayerState() === YT.PlayerState.PLAYING
-          ? player.pauseVideo()
-          : player.playVideo();
-      }
-      if (event.key === "ArrowRight") {
-        player.seekTo(player.getCurrentTime() + 5);
-      }
-      if (event.key === "ArrowLeft") {
-        player.seekTo(player.getCurrentTime() - 5);
-      }
     };
-
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
@@ -144,12 +126,10 @@ function Home() {
                 className="iframe top"
                 width="600"
                 height="315"
-                id="youtube-video"
-                src={`https://www.youtube.com/embed/${result.id.videoId}?autoplay=1?enablejsapi=1`}
+                src={`https://www.youtube.com/embed/${result.id.videoId}?autoplay=1`}
                 title={result.snippet.title}
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                //  frameborder="0"
               ></iframe>
               <div className="botones top">
                 {contador != 0 && (

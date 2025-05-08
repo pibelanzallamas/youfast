@@ -4,6 +4,8 @@ import axios from "axios";
 function Home() {
   const youtubeAPI = import.meta.env.VITE_API_KEY; //youtube api key
   const inputRef = useRef(null);
+  const nextRef = useRef(null);
+  const backRef = useRef(null);
   const [search, setSearch] = useState(""); //prompt
   const [videos, setVideos] = useState([]); //videos encontrados
   const [result, setResult] = useState(null); //video seleccionado
@@ -26,14 +28,22 @@ function Home() {
     }
   }, [result]);
 
+  // SHORTCUTS
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "/") {
         event.preventDefault();
         inputRef.current?.focus();
       }
+      if (event.ctrlKey && event.key === "ArrowRight") {
+        event.preventDefault();
+        nextRef.current?.click();
+      }
+      if (event.ctrlKey && event.key === "ArrowLeft") {
+        event.preventDefault();
+        backRef.current?.click();
+      }
     };
-
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
@@ -41,6 +51,7 @@ function Home() {
     };
   }, []);
 
+  // Hacer que un atajo haga siguiente, anterior, entrar a la barra de busqueda ya esta, pero / hace aca en firefox
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
@@ -122,12 +133,18 @@ function Home() {
               ></iframe>
               <div className="botones top">
                 {contador != 0 && (
-                  <button onClick={() => setContador(contador - 1)}>
+                  <button
+                    ref={backRef}
+                    onClick={() => setContador(contador - 1)}
+                  >
                     {/* ⏮ Previous */}⏮ Anterior
                   </button>
                 )}
                 {contador < 19 && (
-                  <button onClick={() => setContador(contador + 1)}>
+                  <button
+                    ref={nextRef}
+                    onClick={() => setContador(contador + 1)}
+                  >
                     {/* Next ⏭ */}
                     Siguiente ⏭
                   </button>

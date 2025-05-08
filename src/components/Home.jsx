@@ -13,6 +13,36 @@ function Home() {
   const [ready, setReady] = useState(false);
   const [access, setAccess] = useState(false); //llave de entrada
   const [code, setCode] = useState("");
+  let player;
+
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player("youtube-video", {
+      events: {
+        onReady: onPlayerReady,
+      },
+    });
+  }
+
+  function onPlayerReady(event) {
+    // Asignar atajos de teclado
+    document.addEventListener("keydown", (e) => {
+      if (e.key === " ") {
+        // Barra espaciadora para play/pause
+        e.preventDefault();
+        player.getPlayerState() === YT.PlayerState.PLAYING
+          ? player.pauseVideo()
+          : player.playVideo();
+      }
+      if (e.key === "ArrowRight") {
+        // Avanzar 5 segundos
+        player.seekTo(player.getCurrentTime() + 5);
+      }
+      if (e.key === "ArrowLeft") {
+        // Retroceder 5 segundos
+        player.seekTo(player.getCurrentTime() - 5);
+      }
+    });
+  }
 
   useEffect(() => {
     if (videos.length > 0) {
@@ -126,10 +156,12 @@ function Home() {
                 className="iframe top"
                 width="600"
                 height="315"
-                src={`https://www.youtube.com/embed/${result.id.videoId}?autoplay=1`}
+                id="youtube-video"
+                src={`https://www.youtube.com/embed/${result.id.videoId}?autoplay=1?enablejsapi=1`}
                 title={result.snippet.title}
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
+                //  frameborder="0"
               ></iframe>
               <div className="botones top">
                 {contador != 0 && (

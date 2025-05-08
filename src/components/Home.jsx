@@ -15,35 +15,6 @@ function Home() {
   const [code, setCode] = useState("");
   let player;
 
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player("youtube-video", {
-      events: {
-        onReady: onPlayerReady,
-      },
-    });
-  }
-
-  function onPlayerReady(event) {
-    // Asignar atajos de teclado
-    document.addEventListener("keydown", (e) => {
-      if (e.key === " ") {
-        // Barra espaciadora para play/pause
-        e.preventDefault();
-        player.getPlayerState() === YT.PlayerState.PLAYING
-          ? player.pauseVideo()
-          : player.playVideo();
-      }
-      if (e.key === "ArrowRight") {
-        // Avanzar 5 segundos
-        player.seekTo(player.getCurrentTime() + 5);
-      }
-      if (e.key === "ArrowLeft") {
-        // Retroceder 5 segundos
-        player.seekTo(player.getCurrentTime() - 5);
-      }
-    });
-  }
-
   useEffect(() => {
     if (videos.length > 0) {
       setResult(videos[contador]);
@@ -75,6 +46,30 @@ function Home() {
       }
     };
     window.addEventListener("keydown", handleKeyDown);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === " ") {
+        // Barra espaciadora para play/pause
+        e.preventDefault();
+        player.getPlayerState() === YT.PlayerState.PLAYING
+          ? player.pauseVideo()
+          : player.playVideo();
+      }
+      if (e.key === "ArrowRight") {
+        // Avanzar 5 segundos
+        player.seekTo(player.getCurrentTime() + 5);
+      }
+      if (e.key === "ArrowLeft") {
+        // Retroceder 5 segundos
+        player.seekTo(player.getCurrentTime() - 5);
+      }
+    });
+
+    player = new YT.Player("youtube-video", {
+      events: {
+        onReady: onPlayerReady,
+      },
+    });
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);

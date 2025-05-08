@@ -129,7 +129,7 @@ function Home() {
                 title={result.snippet.title}
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                rel={0}
+                rel="0"
               ></iframe>
               <div className="botones top">
                 {contador != 0 && (

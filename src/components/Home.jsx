@@ -14,12 +14,14 @@ function Home() {
   const [access, setAccess] = useState(false); //llave de entrada
   const [code, setCode] = useState("");
 
+  // SELECCIONADOR DE VIDEO
   useEffect(() => {
     if (videos.length > 0) {
       setResult(videos[contador]);
     }
   }, [contador, videos]);
 
+  // ESTADO DE CARGA
   useEffect(() => {
     if (result && result.snippet) {
       setReady(true);
@@ -51,6 +53,7 @@ function Home() {
     };
   }, []);
 
+  // BUSCADOS DE 20 RESULTADOS
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
@@ -70,6 +73,7 @@ function Home() {
     }
   };
 
+  // LOGIN
   function handleCode(e) {
     e.preventDefault();
     if (code == import.meta.env.VITE_LOGIN_KEY) {
@@ -125,7 +129,7 @@ function Home() {
                 className="iframe top"
                 width="600"
                 height="315"
-                src={`https://www.youtube.com/embed/${result.id.videoId}?autoplay=1?rel=0`}
+                src={`https://www.youtube.com/embed/${result.id.videoId}?autoplay=1`}
                 title={result.snippet.title}
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

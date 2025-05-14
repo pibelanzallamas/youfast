@@ -129,7 +129,7 @@ function Home() {
                 className="iframe top"
                 width="600"
                 height="315"
-                src={`https://www.youtube.com/embed/${result.id.videoId}?autoplay=1`}
+                src={`https://www.youtube.com/embed/${result.id.videoId}?rel=0?autoplay=1`}
                 title={result.snippet.title}
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

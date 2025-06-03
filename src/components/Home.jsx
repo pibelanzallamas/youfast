@@ -11,7 +11,7 @@ function Home() {
   const [result, setResult] = useState(null); //video seleccionado
   const [contador, setContador] = useState(0); //numero de video
   const [ready, setReady] = useState(false);
-  const [access, setAccess] = useState(false); //llave de entrada
+  const [access, setAccess] = useState(true); //llave de entrada
   const [code, setCode] = useState("");
 
   // SELECCIONADOR DE VIDEO

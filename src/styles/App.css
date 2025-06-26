@@ -40,6 +40,27 @@ h1 {
   font-weight: 600;
 }
 
+footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  aling-items: center;
+}
+
+.boton-idioma-contenedor button {
+  padding: 0.2rem 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #0066ff;
+  border-radius: 40px;
+  background-color: inherit;
+  color: #0066ff;
+  cursor: pointer;
+}
+.boton-idioma-contenedor button:hover, .boton-idioma-contenedor button:focus {
+  background-color: #0066ff;
+  color: white;
+}
+
 .titulo {
   font-size: 1.3rem;
 }

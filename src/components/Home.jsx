@@ -13,6 +13,12 @@ function Home() {
   const [ready, setReady] = useState(false);
   const [access, setAccess] = useState(true); //llave de entrada
   const [code, setCode] = useState("");
+  const [esp, setEsp] = useState(true)
+
+  // CAMBIAR IDIOMA
+  function handleLang (){
+    setEsp(!esp)
+  }
 
   // SELECCIONADOR DE VIDEO
   useEffect(() => {
@@ -107,12 +113,13 @@ function Home() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 maxLength={60}
-                placeholder="Escribir canción"
+                placeholder={esp ? "Escribir canción" : "Write a song"}
                 autoFocus
                 ref={inputRef}
               ></input>
             </div>
           </form>
+          {esp ?
           <div className="instrucciones top">
             <p className="title">
               <u>Instrucciones</u>
@@ -120,8 +127,16 @@ function Home() {
             <p>1. Escribí la canción más el artista en la barra de búsqueda.</p>
             <p>2. Apretá ENTER.</p>
             <p>3. Si no es la que buscas, dale a Siguiente ⏭.</p>
+          </div> :
+          <div className="instrucciones top">
+            <p className="title">
+              <u>Instrucctions</u>
+            </p>
+            <p>1. Write the title of the song and the artist.</p>
+            <p>2. Hit ENTER.</p>
+            <p>3. If it's not what you want, hit Next ⏭.</p>
           </div>
-
+          }
           {ready && result && (
             <div className="video top">
               <h3 style={{ fontSize: "1.4rem" }}>▶️ {result.snippet.title}</h3>
@@ -140,7 +155,7 @@ function Home() {
                     ref={backRef}
                     onClick={() => setContador(contador - 1)}
                   >
-                    {/* ⏮ Previous */}⏮ Anterior
+                    {esp ? "⏮ Anterior" : "⏮ Previous"}
                   </button>
                 )}
                 {contador < 19 && (
@@ -148,8 +163,7 @@ function Home() {
                     ref={nextRef}
                     onClick={() => setContador(contador + 1)}
                   >
-                    {/* Next ⏭ */}
-                    Siguiente ⏭
+                    {esp ? "Siguiente ⏭" : "Next ⏭"}
                   </button>
                 )}
               </div>
@@ -158,9 +172,7 @@ function Home() {
         </>
       ) : (
         <>
-          {/* <div className="instrucciones top"> */}
-          <p className="title-clave">Ingrese código: </p>
-          {/* </div> */}
+          <p className="title-clave">{esp ? "Ingrese código: " : "Insert code: " }</p>
           <form onSubmit={handleCode}>
             <div className="buscador top">
               <input
@@ -179,7 +191,11 @@ function Home() {
       <div style={{ flex: "1" }}></div>
 
       <footer className="top" style={{ fontSize: "1.1rem" }}>
-        <p>Hecho por Brandon Castillo 🔥</p>
+        <div></div>
+        {esp ? <p>Hecho por Brandon Castillo 🔥</p> : <p>Made by Brandon Castillo 🔥</p>}
+        <div className="boton-idioma-contenedor">
+          <button onClick={()=>handleLang()} className="boton-idioma">{esp?"English":"Español"}</button>
+        </div>
       </footer>
     </div>
   );

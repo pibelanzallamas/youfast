@@ -130,7 +130,7 @@ function Home() {
           </div> :
           <div className="instrucciones top">
             <p className="title">
-              <u>Instrucctions</u>
+              <u>Instructions</u>
             </p>
             <p>1. Write the title of the song and the artist.</p>
             <p>2. Hit ENTER.</p>

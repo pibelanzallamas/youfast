@@ -1,8 +1,8 @@
 YouFast
 
-![image](https://res.cloudinary.com/daynclfo8/image/upload/v1732665477/elder.png)
+![image](https://res.cloudinary.com/daynclfo8/image/upload/f_webp,q_80/v1749923307/2025-06-14_14-48_r2pqdj.png)
 
-[Demo](https://www.youtube.com/watch?v=VXR-ek3Ez50)
+[Demo](https://www.youtube.com/watch?v=lVOHTdXnGaI)
 
 _**Español**_
 

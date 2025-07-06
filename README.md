@@ -1,4 +1,4 @@
-Abuelitos
+YouFast
 
 ![image](https://res.cloudinary.com/daynclfo8/image/upload/v1732665477/elder.png)
 
@@ -6,13 +6,13 @@ Abuelitos
 
 _**Español**_
 
-Entrar al sitio web, ingresar canción a buscar y presione "Siguiente" hasta que encuentre la suya.
+Ingresar canción a buscar y presionar "Enter". Dar "Siguiente" hasta que encuentre la correcta.
 
 Muchas gracias.
 
 _**English**_
 
-Enter the website, type your song, and press 'Siguiente' until you find the right one.
+Enter the website, type your song, and press 'Enter'. Hit "Next" until you find the right one.
 
 Thank you.
 

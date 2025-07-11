@@ -14,10 +14,15 @@ function Home() {
   const [access, setAccess] = useState(true); //llave de entrada
   const [code, setCode] = useState("");
   const [esp, setEsp] = useState(true)
+  const [mode, setMode] = useState(false)
 
   // CAMBIAR IDIOMA
   function handleLang (){
     setEsp(!esp)
+  }
+
+  function handleMode (){
+    setMode(!mode)
   }
 
   // SELECCIONADOR DE VIDEO
@@ -90,7 +95,7 @@ function Home() {
   }
 
   return (
-    <div className="home">
+    <div className={mode ? "home home-dark" : "home"}>
       <h1
         className="top"
         onClick={() => {
@@ -107,7 +112,7 @@ function Home() {
       {access ? (
         <>
           <form onSubmit={handleSearch}>
-            <div className="buscador search-song top">
+            <div className={mode ? "buscador-dark search-song top" : "buscador search-song top"}>
               <input
                 type="text"
                 value={search}
@@ -149,7 +154,7 @@ function Home() {
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
-              <div className="botones top">
+              <div className={mode ? "botones-dark top":"botones top"}>
                 {contador != 0 && (
                   <button
                     ref={backRef}
@@ -191,9 +196,11 @@ function Home() {
       <div style={{ flex: "1" }}></div>
 
       <footer className="top" style={{ fontSize: "1.1rem" }}>
-        <div></div>
-        {esp ? <p>Hecho por Brandon Castillo 🔥</p> : <p>Made by Brandon Castillo 🔥</p>}
-        <div className="boton-idioma-contenedor">
+        <div className={mode ? "boton-idioma-contenedor-dark" : "boton-idioma-contenedor"}> 
+          <button onClick={()=>handleMode()} className="boton-idioma">{esp?"Night Mode":"Modo Oscuro"}</button>
+        </div>
+        {esp ? <p className="firma">Hecho por Brandon Castillo 🔥</p> : <p className="firma">Made by Brandon Castillo 🔥</p>}
+        <div  className={mode ? "boton-idioma-contenedor-dark" : "boton-idioma-contenedor"}>
           <button onClick={()=>handleLang()} className="boton-idioma">{esp?"English":"Español"}</button>
         </div>
       </footer>

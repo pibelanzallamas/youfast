@@ -17,6 +17,20 @@ h1 {
   outline: 2px solid #ff7045;
 }
 
+.buscador-dark input {
+  border: 2px solid white;
+  border-radius: 40px;
+  color: white;
+  font-size: 20px;
+  padding: 4px 16px;
+  text-align: center;
+  background-color: inherit;
+  font-family: Montserrat;
+}
+.buscador-dark input:focus {
+  outline: 2px solid #ff7045;
+}
+
 .title-clave {
   margin-top: 0.4rem;
   font-size: 1.3rem;
@@ -61,6 +75,20 @@ footer {
   color: white;
 }
 
+.boton-idioma-contenedor-dark button {
+  padding: 0.2rem 0.5rem;
+  font-size: 1rem;
+  border: 2px solid white;
+  border-radius: 40px;
+  background-color: inherit;
+  color: white;
+  cursor: pointer;
+}
+.boton-idioma-contenedor-dark button:hover, .boton-idioma-contenedor-dark button:focus {
+  background-color: white;
+  color: white;
+}
+
 .titulo {
   font-size: 1.3rem;
 }
@@ -82,6 +110,26 @@ footer {
 }
 .botones button:hover, .botones button:focus {
   background-color: #0066ff;
+  color: white;
+}
+
+.botones-dark {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.botones-dark button {
+  padding: 0.7rem;
+  font-size: 1rem;
+  border: 2px solid white;
+  border-radius: 40px;
+  background-color: inherit;
+  color: white;
+  cursor: pointer;
+}
+.botones-dark button:hover, .botones-dark button:focus {
+  background-color: white;
   color: white;
 }
 
@@ -110,6 +158,11 @@ body {
   text-align: center;
   background-image: linear-gradient(to bottom, #b3e0ff, #fde7e7);
   min-height: 100vh;
+}
+
+.home-dark {
+  background-image: linear-gradient(to bottom, #3288c2, #684f4f);
+  color: white;
 }
 
 .top {

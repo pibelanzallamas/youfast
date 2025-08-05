@@ -199,7 +199,11 @@ function Home() {
         <div className={mode ? "boton-idioma-contenedor-dark" : "boton-idioma-contenedor"}> 
           <button onClick={()=>handleMode()} className="boton-idioma">{esp?"Night Mode":"Modo Oscuro"}</button>
         </div>
-        {esp ? <p className="firma">Hecho por Brandon Castillo 🔥</p> : <p className="firma">Made by Brandon Castillo 🔥</p>}
+        <p className="firma">
+        {esp
+          ? "Hecho con ❤️ por Brandon 🏰"
+          : "Made with ❤️ by Brandon 🏰"}
+        </p>
         <div  className={mode ? "boton-idioma-contenedor-dark" : "boton-idioma-contenedor"}>
           <button onClick={()=>handleLang()} className="boton-idioma">{esp?"English":"Español"}</button>
         </div>

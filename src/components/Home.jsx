@@ -200,9 +200,7 @@ function Home() {
           <button onClick={()=>handleMode()} className="boton-idioma">{esp?"Night Mode":"Modo Oscuro"}</button>
         </div>
         <p className="firma">
-        {esp
-          ? "Hecho con ❤️ por Brandon 🏰"
-          : "Made with ❤️ by Brandon 🏰"}
+          {esp ? "Hecho con ❤️ por Brandon 🏰": "Made with ❤️ by Brandon 🏰"}
         </p>
         <div  className={mode ? "boton-idioma-contenedor-dark" : "boton-idioma-contenedor"}>
           <button onClick={()=>handleLang()} className="boton-idioma">{esp?"English":"Español"}</button>

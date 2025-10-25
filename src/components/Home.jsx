@@ -149,7 +149,7 @@ function Home() {
                 className="iframe top"
                 width="600"
                 height="315"
-                src={`https://www.youtube.com/embed/${result.id.videoId}?autoplay=1`}
+                src={`https://www.youtube.com/embed/${result.id.videoId}?autoplay=1&rel=0&modestbranding=1&showinfo=0&controls=1&fs=1`}
                 title={result.snippet.title}
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

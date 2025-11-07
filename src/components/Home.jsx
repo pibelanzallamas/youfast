@@ -5,16 +5,16 @@ function Home() {
   const youtubeAPI = import.meta.env.VITE_API_KEY; //youtube api key
   const inputRef = useRef(null);
   const nextRef = useRef(null);
-  const backRef = useRef(null);
+  const backRef = useRef(null); 
   const [search, setSearch] = useState(""); //prompt
   const [videos, setVideos] = useState([]); //videos encontrados
   const [result, setResult] = useState(null); //video seleccionado
   const [contador, setContador] = useState(0); //numero de video
-  const [ready, setReady] = useState(false);
+  const [ready, setReady] = useState(false); //por si ya cargo
   const [access, setAccess] = useState(true); //llave de entrada
-  const [code, setCode] = useState("");
-  const [esp, setEsp] = useState(true)
-  const [mode, setMode] = useState(false)
+  const [code, setCode] = useState("");  //para pass pero ya no 
+  const [esp, setEsp] = useState(true) //idioma
+  const [mode, setMode] = useState(true) //modo nocturno
 
   // CAMBIAR IDIOMA
   function handleLang (){

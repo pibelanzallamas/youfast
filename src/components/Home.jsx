@@ -197,7 +197,9 @@ function Home() {
 
       <footer className="top" style={{ fontSize: "1.1rem" }}>
         <div className={mode ? "boton-idioma-contenedor-dark" : "boton-idioma-contenedor"}> 
-          <button onClick={()=>handleMode()} className="boton-idioma">{esp?"Modo Oscuro":"Night Mode"}</button>
+          <button onClick={()=>handleMode()} className="boton-idioma">
+            {mode ? (esp ? "Modo Claro" : "Light Mode") : (esp ? "Modo Oscuro" : "Dark Mode") }
+          </button>
         </div>
         <p className="firma">
           {esp ? "Hecho con ❤️ por Brandon 🏰": "Made with ❤️ by Brandon 🏰"}

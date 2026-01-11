@@ -12,7 +12,7 @@ Thank you.
 
 _**Español**_
 
-Ingresar el prompt y presione "Enter". Dar "Siguiente" hasta que encuentre la correcta.
+Ingresar el prompt y presione "Enter". Dar "Siguiente" hasta encontrar la correcta.
 
 Muchas gracias.
 

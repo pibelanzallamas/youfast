@@ -13,7 +13,7 @@ function Home() {
   const [ready, setReady] = useState(false); //por si ya cargo
   const [access, setAccess] = useState(true); //llave de entrada
   const [code, setCode] = useState("");  //para pass pero ya no 
-  const [esp, setEsp] = useState(true) //idioma
+  const [esp, setEsp] = useState(false) //idioma
   const [mode, setMode] = useState(true) //modo nocturno
 
   // CAMBIAR IDIOMA

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./styles/App.css";
-import Home from "./components/Home";
+import Home from "./Home";
 import { Analytics } from "@vercel/analytics/react";
 
 function App() {

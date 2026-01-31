@@ -30,6 +30,9 @@ h1 {
 .buscador-dark input:focus {
   outline: 2px solid #ff7045;
 }
+.buscador-dark input::placeholder {
+  color: #f0f0f0;
+}
 
 .title-clave {
   margin-top: 0.4rem;
@@ -86,7 +89,7 @@ footer {
 }
 .boton-idioma-contenedor-dark button:hover, .boton-idioma-contenedor-dark button:focus {
   background-color: rgba(242, 243, 242, 0.8980392157);
-  color: rgba(242, 243, 242, 0.8980392157);
+  color: transparent;
 }
 
 .titulo {
@@ -130,7 +133,7 @@ footer {
 }
 .botones-dark button:hover, .botones-dark button:focus {
   background-color: rgba(242, 243, 242, 0.8980392157);
-  color: rgba(242, 243, 242, 0.8980392157);
+  color: transparent;
 }
 
 @media only screen and (max-width: 759px) {

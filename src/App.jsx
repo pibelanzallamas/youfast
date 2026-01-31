@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./styles/App.css";
+import "./styles/app.css";
 import Home from "./Home";
 import { Analytics } from "@vercel/analytics/react";
 
